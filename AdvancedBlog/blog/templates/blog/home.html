@@ -1,0 +1,23 @@
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% trans "My Blog" %}</title>
+</head>
+<body>
+
+    <h1>{% trans "Welcome to the Blog" %}</h1>
+
+    {% if user.is_authenticated %}
+        {% blocktrans %}
+            Hello {{ user.username }}! Thanks for logging in.
+        {% endblocktrans %}
+    {% else %}
+        <p>{% trans "Please log in to continue." %}</p>
+    {% endif %}
+
+</body>
+</html>
+
+

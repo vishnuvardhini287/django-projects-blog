@@ -1,0 +1,11 @@
+<h1>Create a Blog Post</h1>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <h3>Attachments</h3>
+    {{ formset.management_form }}
+    {% for form in formset %}
+        {{ form.as_p }}
+    {% endfor %}
+    <button type="submit">Publish</button>
+</form>

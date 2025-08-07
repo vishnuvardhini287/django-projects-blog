@@ -1,0 +1,57 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-08-07 16:26+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+#: AdvancedBlog/settings.py:119
+msgid "English"
+msgstr ""
+
+#: AdvancedBlog/settings.py:120
+msgid "Spanish"
+msgstr ""
+
+#: AdvancedBlog/settings.py:121
+msgid "French"
+msgstr ""
+
+#: blog/templates/blog/post_detail.html:36 blog/templates/home.html:10
+msgid "Welcome to the Blog"
+msgstr "Bienvenido al Blog"
+
+#: blog/templates/blog/post_detail.html:38
+#, python-format
+msgid ""
+"\n"
+"Hello %(user.name)s!\n"
+msgstr ""
+
+#: blog/templates/home.html:6
+msgid "My Blog"
+msgstr ""
+
+#: blog/templates/home.html:13
+#, python-format
+msgid ""
+"\n"
+"            Hello %(user.username)s! Thanks for logging in.\n"
+"        "
+msgstr ""
+
+#: blog/templates/home.html:17
+msgid "Please log in to continue."
+msgstr "Por favor, inicie sesión para continuar."
