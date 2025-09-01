@@ -14,6 +14,8 @@ class Post(models.Model):
 class Attachment(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='attachments')
     file = models.FileField(upload_to='attachments/')
+    name = models.CharField(max_length=100)
+    message = models.TextField()
 
 class Comment(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments')

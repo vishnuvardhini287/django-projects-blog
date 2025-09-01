@@ -1,0 +1,49 @@
+<form method="post">
+    {% csrf_token %}
+
+    <h2>Edit Post</h2>
+    {{ post_form.as_p }}
+
+    <h2>Comments</h2>
+    {{ formset.management_form }}
+    {% for form in formset %}
+        <div style="margin-bottom: 1em;">
+            {{ form.as_p }}
+            {% if form.instance.pk %}
+                <p>Existing comment ID: {{ form.instance.pk }}</p>
+            {% endif %}
+        </div>
+    {% endfor %}
+
+    <button type="submit">Save All</button>
+</form>
+{% if formset.can_delete %}
+    <h3>Delete Comments</h3>
+    {% for form in formset %}
+        {% if form.instance.pk %}
+            <div>
+                <label>
+                    {{ form.DELETE }} Delete this comment
+                </label>
+            </div>
+        {% endif %}
+    {% endfor %}
+{% endif %}
+{% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>
+                {{ message }}
+            </li>
+        {% endfor %}
+    </ul>
+{% endif %}
+{% if formset.non_form_errors %}
+    <div class="errorlist">
+        {{ formset.non_form_errors }}
+    </div>
+{% endif %}
+{% if post_form.non_field_errors %}
+    <div class="errorlist">     
+        {{ post_form.non_field_errors }}
+    </div>                  

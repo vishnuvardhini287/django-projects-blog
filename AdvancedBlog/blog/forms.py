@@ -3,6 +3,9 @@ from .models import Post, Attachment, Comment
 from ckeditor.widgets import CKEditorWidget
 from taggit.forms import TagWidget
 from captcha.fields import CaptchaField
+from django.forms import inlineformset_factory
+
+
 
 class PostForm(forms.ModelForm):
     content = forms.CharField(widget=CKEditorWidget())
@@ -25,3 +28,11 @@ class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
         fields = ['name', 'message']
+
+
+CommentFormSet = inlineformset_factory(
+    Post, Comment,
+    fields=('name', 'message'),
+    extra=2,  # number of blank forms
+    can_delete=True
+)
